@@ -3,30 +3,30 @@ import React, { useEffect } from "react";
 export default function WaveAnimation() {
 
   useEffect(()=>{
-    // function createBubbles() {
-    //   const container = document.getElementById("bubbleContainer");
+    function createBubbles() {
+      const container = document.getElementById("bubbleContainer");
 
-    //   const numBubbles = 15; // Adjust the number of bubbles as needed
-    //   const bubbleAnimationDuration = 5; // Animation duration in seconds
+      const numBubbles = 15; // Adjust the number of bubbles as needed
+      const bubbleAnimationDuration = 5; // Animation duration in seconds
 
-    //   for (let i = 0; i < numBubbles; i++) {
-    //     const leftPosition = Math.random() * 100; // Random left position between 0% and 100%
-    //     const animationDelay = Math.random() * bubbleAnimationDuration; // Random animation delay
+      for (let i = 0; i < numBubbles; i++) {
+        const leftPosition = Math.random() * 100; // Random left position between 0% and 100%
+        const animationDelay = Math.random() * bubbleAnimationDuration; // Random animation delay
 
-    //     const bubble = document.createElement("div");
-    //     bubble.classList.add("bubble");
-    //     bubble.style.left = leftPosition + "%";
-    //     bubble.style.animationDelay = animationDelay + "s";
+        const bubble = document.createElement("div");
+        bubble.classList.add("bubble");
+        bubble.style.left = leftPosition + "%";
+        bubble.style.animationDelay = animationDelay + "s";
 
-    //     container.appendChild(bubble);
-    //   }
-    // }
+        container.appendChild(bubble);
+      }
+    }
 
-    // createBubbles();
+    createBubbles();
   }, [])
   return (
-    <div className="wave-container">
-      {/* <div className="bubble-container" id="bubbleContainer"></div> */}
+    <>
+      <div className="wave-container" id="bubbleContainer">
 
       <svg
         className="wave-svg"
@@ -34,8 +34,6 @@ export default function WaveAnimation() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 600 200"
         preserveAspectRatio="none"
-        // width="394px"
-        // height={'530px'}
       >
         <path
           id="waveSVGPath"
@@ -44,5 +42,7 @@ export default function WaveAnimation() {
         ></path>
       </svg>
     </div>
+    </>
+  
   );
 }

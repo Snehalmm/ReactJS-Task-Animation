@@ -78,13 +78,18 @@
 
 .wave-container {
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: -10;
+  overflow: hidden;
+  /* position: absolute; */
 }
 .wave-container .wave-svg {
   height: 100vh;
+  /* position: absolute; */
+
 }
 
 .wave-path {
@@ -105,6 +110,35 @@
     d: path(
       "M0,100 C50,120 150,80 200,100 C250,120 350,80 400,100 C450,120 550,80 600,100 C650,120 750,80 800,100 V200 H0 Z"
     );
+  }
+}
+.bubble-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: bubbleAnimation 5s linear infinite;
+}
+
+@keyframes bubbleAnimation {
+  0% {
+    transform: translateY(0) scale(0.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(4.2);
+    opacity: 0;
   }
 }
 
@@ -193,32 +227,4 @@
 
 .logo-wrap {
   position: relative;
-}
-.bubble-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bubble {
-  position: absolute;
-  bottom: 0;
-  width: 10px;
-  height: 10px;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0;
-  animation: bubbleAnimation 5s linear infinite;
-}
-
-@keyframes bubbleAnimation {
-  0% {
-    transform: translateY(0) scale(0.2);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) scale(4.2);
-    opacity: 0;
-  }
 }
